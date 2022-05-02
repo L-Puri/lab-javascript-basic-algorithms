@@ -8,10 +8,10 @@
 
   	// 1.4 Print `"The navigator's name is YYYY"`.
     
-let hacker1 = "john";
+let hacker1 = 'john';
 console.log(`The driver's name is ${hacker1}`);
 
-let navigator = "Josh";
+let navigator = 'Josh';
 console.log(`The navigaor's name is ${navigator}`);
 
 
@@ -21,13 +21,19 @@ console.log(`The navigaor's name is ${navigator}`);
 // - `It seems that the navigator has the longest name, it has XX characters.` or <br>
 // - `Wow, you both have equally long names, XX characters!`.
 
-if(hacker1 === "john") {
-    console.log(`The driver has the longest name, it has four characters.`);
-} else if (navigator === "Josh") {
-    console.log(`It seems that the navigator has the longest name, it has four characters.`);
+
+let hackerSecond = 'David';
+let hackerThird = 'Marko';
+
+if(hackerSecond === 'David') {
+    console.log(`The driver has the longest name, it has ${hackerSecond.length} characters.`);
+} else if (hackerThird === 'Marko') {
+    console.log(`It seems that the navigator has the longest name, it has ${hackerThird.length} four characters.`);
 } else {
 
 console.log(`Wow, you both have equally long names, four characters!.`);
+
+// console.log(`${str} ${str.length}`);
 }
 
 
@@ -43,6 +49,9 @@ console.log(`Wow, you both have equally long names, four characters!.`);
 //   - `Yo, the navigator goes first definitely.` <br>
 //   - `What?! You both have the same name?`
 
+
+//SEPERATED CAPITAL LETTERS
+
 let hackerName = '';
 
 for(let index = 0; index < hacker1.length; index+= 1) {
@@ -51,6 +60,7 @@ for(let index = 0; index < hacker1.length; index+= 1) {
 console.log(hackerName.trim());
 
 
+//REVERSE ORDER
 let hackerNameReverse = '';
 
 for(let index = hacker1.length -1; index>=0; index--) {
@@ -58,11 +68,29 @@ for(let index = hacker1.length -1; index>=0; index--) {
 }
 console.log(hackerNameReverse.trim());
 
+
+//LEXICOGRAPHIC ORDER
+let firstName = ['Marko', 'David'];
+firstName.sort(function(a, b) {
+    return a.localeCompare(b);
+});
+console.log(firstName);
+
+
+
 // Bonus 1:
 // Go to [lorem ipsum generator](http://www.lipsum.com/) and:
 //   - Generate 3 paragraphs. Store the text in a variable type of string.
 //   - Make your program count the number of words in the string.
 //   - Make your program count the number of times the Latin word [`et`](https://en.wiktionary.org/wiki/et#Latin) appears.
+
+let wordCount = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque purus semper eget duis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque purus semper eget duis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque purus semper eget duis."
+
+function WordCount(str) { 
+    return str.split(" ").length;
+}
+
+console.log(WordCount(wordCount));
 
 
 
@@ -78,3 +106,28 @@ console.log(hackerNameReverse.trim());
 //   - "Was it a car or a cat I saw?" and "No 'x' in Nixon".
   
 //   __Hint__: If you use Google to help you to find solution to this iteration, you might run into some solutions that use advanced string or array methods (such as _join()_, _reverse()_, etc.). However, try to apply the knowledge you currently have since you can build pretty nice solution with just using `for` loop, `if-else` statements with some `break` and `continue`... Just sayin' :smiley: 
+
+// let neem = "Ajay";
+// function isPal2(str) {
+//     let newStr=str.toLowerCase();
+//     let right=newStr.length -1;
+//     while (left < right) {
+//     if(newStr[left] !== newStr[right]) return false;
+//     left++;
+//     right--;
+//     }
+//     return true;
+// }
+  
+// console.log(isPal2(neem));
+
+let phraseToCheck = ['A man, a plan, a canal, Panama!', 'Amor, Roma', 'race car', 'stack cats', 'step on no pets', 'taco cat', 'put it up'];
+let stringg = phraseToCheck.length;
+let msg = 'It is a Palindrome';
+for(let i = 0; i < stringg/2; i++) {
+    if(phraseToCheck[i] != phraseToCheck[stringg - 1 - i]) {
+        msg = 'It is not a Palindrome';
+    }
+}
+
+console.log(`${phraseToCheck} ${msg}`);

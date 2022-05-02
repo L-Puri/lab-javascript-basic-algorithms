@@ -97,6 +97,8 @@ Create a new variable `phraseToCheck` and have it contain some string value. Wri
   - "taco cat"
   - "put it up"
   - "Was it a car or a cat I saw?" and "No 'x' in Nixon".
+
+  
   
   __Hint__: If you use Google to help you to find solution to this iteration, you might run into some solutions that use advanced string or array methods (such as _join()_, _reverse()_, etc.). However, try to apply the knowledge you currently have since you can build pretty nice solution with just using `for` loop, `if-else` statements with some `break` and `continue`... Just sayin' :smiley: 
 
